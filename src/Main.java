@@ -10,7 +10,16 @@ public class Main {
 
          */
         int[] drinkPrices = {150, 80, 20, 30};
-        System.out.println(drinkPrices[4]);
+        System.out.println("BEFORE");
+
+        try {
+            System.out.println(drinkPrices[4]);
+
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Exception occured !");
+        }
+
+        System.out.println("AFTER");
 
 
     }
