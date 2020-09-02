@@ -1,11 +1,10 @@
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.util.InputMismatchException;
-import java.util.Scanner;
-
 public class Main {
+
     public static void main(String[] args) {
 
+        MyThread thread = new MyThread();
+        thread.start();
+/*
         int[] drinkPrices = {150, 80, 20, 30};
         String[] drinkNames = {"Cappuccinos", "Americano", "Water", "Milk"};
 
@@ -23,7 +22,7 @@ public class Main {
 
 
         //TODO Exceptions
-        /*
+
         //---------------------------------------------------------
         int[] drinkPrices = {150, 80, 20, 30};
         System.out.println("BEFORE");
@@ -45,7 +44,7 @@ public class Main {
             e.printStackTrace();
         }
         //---------------------------------------------------------
-        */
+
 
         //TODO Multithreading
 
@@ -56,9 +55,17 @@ public class Main {
         thread2.start();
 
 
+        DbxRequestConfig config = DbxRequestConfig.newBuilder("dropbox/java-tutorial").build();
+        DbxClientV2 client = new DbxClientV2(config, ACCESS_TOKEN);
 
+        try {
+            InputStream in = new FileInputStream("/home/ezhik/Desktop/2020.09.01_14:11:58.png");
+            client.files().uploadBuilder("/2020.09.01_14:11:58.png").uploadAndFinish(in);
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 
-
-
+ */
     }
 }
