@@ -32,7 +32,7 @@ public class Main {
             System.out.println(drinkPrices[4]);
 
         } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println("Exception occured !");
+            System.out.println("Exception occurred !");
             e.printStackTrace();
         }
 
@@ -48,15 +48,13 @@ public class Main {
         */
 
         //TODO Multithreading
-        /*
+
         MyThread thread1 = new MyThread(1);
-        thread1.threadNumber = 1;
         MyThread thread2 = new MyThread(2);
-        thread2.threadNumber = 2;
 
         thread1.start();
         thread2.start();
-        */
+
 
 
 
