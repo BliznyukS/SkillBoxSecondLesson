@@ -1,18 +1,18 @@
 public class CoffeeMachine {
-/*
+
     private int[] drinkPrices;
     private String[] drinkNames;
 
-    public CoffeeMachine(int[] drinkPrices, String[] drinkNames){
-        this.drinkNames = ;
-        this.drinkPrices = ;
+    public CoffeeMachine(int[] drinkPrices, String[] drinkNames) {
+        this.drinkNames = drinkNames;
+        this.drinkPrices = drinkPrices;
 
     }
 
-    public void checkPrice(int moneyAmount) {
+    public void checkPrices(int moneyAmount) {
         boolean canBuyAnything = false;
 
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < drinkPrices.length; i++) {
             if (drinkPrices[i] <= moneyAmount) {
                 System.out.println("You could buy : " + drinkNames[i]);
                 canBuyAnything = true;
@@ -26,5 +26,5 @@ public class CoffeeMachine {
         }
     }
 
- */
+
 }
